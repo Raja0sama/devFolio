@@ -1,0 +1,35 @@
+{
+    "About ME": "A full-Stack Passionate developer who loves coding and loves solving complex problems with over 3.5 years of experience in developing Mobile Apps, Websites and server sided app on various languages like PHP, JavaScript, C#, Java, dart, and swift and have worked with NoSQL type databases like Firebase and MongoDB as well as SQL type Databases like MSSQL, MYSQL.",
+    "EDUCATION": [
+        "ACE School, High School, Computer Science (2013 - 2015)",
+        "CMS Collage, Higher Secondary in Pre-engineering (2016 - 2019)",
+        "NewPort University, university in Computer Science (2019)"
+    ],
+    "CERTIFICATION": [
+        "Web Development Diploma, 2014 ",
+        "APTECH Institute of Software Engineering, (2016 - 2019)"
+    ],
+    "EXPERIENCE": {
+        "Dawood Fiber Mills": {
+            "title": "Full Stack Software Engineer",
+            "period": "Mar 2017 - Mar 2020",
+            "responsibilities": [
+                "Working on Backend with Python, PHP, Node.js",
+                "Front End With React, Next.js",
+                "React Native and Native java for mobile Application development.",
+                "Mostly working with Javascript and have also worked with java, c#, and python",
+                "Created a Document Management system Backed by MongoDB, React.js, Node.js. Comming Soon",
+                "Created a Tally Front End System Backed by Next.js, Node.js, Firebase, and Tally for the backend. Super Tally",
+                "React Native App for Receipt Management System for Tally.",
+                "Report Generating apps connected with pos, and over SQL",
+                "Created A E-commerce Website backend supported by Dominionstores.com.NOT ALIVE ANYMORE",
+                "Created An E-commerce React-Native App. Not Alive Anymore but gonna be open source very soon",
+                "Created An Android App for the Managment for stock Managment and Displaying sales as well as all the managment stuff.Play Store",
+                "Redesigned The Managment App for the Normal People to make an order. Never Released Youtubeiew",
+                "Android App for the company vendor who diliver stuff, A tracking App, one app that is being used to track people and one which is displays. Youtube Preview - Created all the apis for all the above apps api on Either PHP core or Node js.",
+                "Created an ERP for the Company Backed by PHP and front end by React, Jquery as well as simple HTML. Accountants",
+                "Create a MAP on svg and HTML>CSS Map"
+            ]
+        }
+    }
+}

@@ -2,7 +2,7 @@
 body,
 html {
   height: unset !important;
-  font-family: "Source Code Pro", monospace;
+  /* font-family: "Source Code Pro", monospace; */
 }
 html,
 body,
@@ -12,16 +12,17 @@ body,
 }
 
 .primaryRT {
-  color: #d0d0d0;
+  color: #ff5e5e;
   mix-blend-mode: difference;
   font-size: 20px;
+  font-weight: 500;
 }
 .primaryR {
-  color: #828282;
+  color: #ababab;
   mix-blend-mode: difference;
   font-size: 18px;
-  font-weight: 100;
+  font-weight: 400;
 }
 .primaryC {
-  color: #668408;
+  color: #46590b;
 }

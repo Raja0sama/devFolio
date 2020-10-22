@@ -6,16 +6,20 @@ export default function Par() {
     <Particles
       style={{
         position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
         zIndex: 0.5,
         mixBlendMode: "difference",
       }}
       params={{
         particles: {
           number: {
-            value: 355,
+            value: 19,
             density: {
               enable: true,
-              value_area: 789.1476416322727,
+              value_area: 800,
             },
           },
           color: {
@@ -37,27 +41,27 @@ export default function Par() {
             },
           },
           opacity: {
-            value: 0.48927153781200905,
+            value: 0.05523641184268667,
             random: false,
             anim: {
-              enable: true,
-              speed: 0.2,
-              opacity_min: 0,
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
               sync: false,
             },
           },
           size: {
-            value: 1,
+            value: 3,
             random: true,
             anim: {
-              enable: true,
-              speed: 7,
-              size_min: 0,
+              enable: false,
+              speed: 40,
+              size_min: 0.1,
               sync: false,
             },
           },
           line_linked: {
-            enable: false,
+            enable: true,
             distance: 150,
             color: "#ffffff",
             opacity: 0.4,
@@ -65,9 +69,9 @@ export default function Par() {
           },
           move: {
             enable: true,
-            speed: 1,
-            direction: "top",
-            random: true,
+            speed: 6,
+            direction: "none",
+            random: false,
             straight: false,
             out_mode: "out",
             bounce: false,
@@ -83,7 +87,7 @@ export default function Par() {
           events: {
             onhover: {
               enable: true,
-              mode: "bubble",
+              mode: "repulse",
             },
             onclick: {
               enable: true,
@@ -99,10 +103,10 @@ export default function Par() {
               },
             },
             bubble: {
-              distance: 83.91608391608392,
-              size: 1,
-              duration: 3,
-              opacity: 1,
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
               speed: 3,
             },
             repulse: {

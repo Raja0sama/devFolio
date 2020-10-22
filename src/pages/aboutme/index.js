@@ -12,87 +12,66 @@ const AboutMe = props => (
       <title>RAJA OSAMA 😎 | About Me</title>
     </Helmet>
     <div
-      style={{
-        position: "absolute",
-        right: 0,
-        left: 0,
-        top: 0,
-        bottom: 0,
-        display: "flex",
-        flexWrap: "wrap",
-      }}
+      style={{ position: "absolute", top: 20, left: 0, right: 0, bottom: 20 }}
     >
-      <div style={{ width: "100%", height: "100%", overflow: "hidden" }}>
-        <Row style={{ height: "100%" }} gutter={20}>
-          <Col
-            className={"scrollbarHide"}
+      <div
+        style={{
+          height: "100%",
+          display: "flex",
+          justifyContent: "center",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          className={"scrollbarHide"}
+          style={{ width: 700, padding: 20, overflow: "auto" }}
+        >
+          <p
             style={{
-              padding: "0px 8vw 0px",
-              top: "10vh",
-              bottom: "10vh",
-              height: "80vh",
-              overflow: "scroll",
+              textAlign: "center",
+              fontSize: "16vh",
+              fontWeight: 900,
+              position: "relative",
+              lineHeight: 0.8,
             }}
-            xs={12}
-            md={6}
+            className="primaryT"
           >
             <div
-              className={"showOnxs"}
               style={{
-                height: "200px",
-                backgroundColor: "white",
-                display: "flex",
+                position: "absolute",
+                top: "0px",
+                bottom: "0",
+                left: "0",
+                right: "0",
+                background: "#ffdb66",
+                mixBlendMode: "difference",
+                margin: "50px",
               }}
-            >
-              <img
-                style={{
-                  height: "inherit",
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                }}
-                src={window.location.origin + "/me.jpg"}
-              />
-            </div>
-            <span
-              style={{ borderBottom: "0.5px #83838314 solid" }}
-              className="primaryT  largest fw400"
-            >
-              RAJA OSAMA
-            </span>
-            <p className="primaryLT  medium fw200">
-              {" "}
-              A full-Stack Passionate developer who loves coding and loves
-              solving complex problems with over 3.5 years of experience in
-              developing Mobile Apps, Websites and server sided app on various
-              languages like PHP, JavaScript, C#, Java, dart, and swift and have
-              worked with NoSQL type databases like Firebase and MongoDB as well
-              as SQL type Databases like MSSQL, MYSQL.
-              <br />
-              Currently Focused on Multiplatform Development and Cross-platform
-              Development over React Native and with PWA. I always tire to stay
-              up-to-date with the latest technologies available with time and I
-              consider it my strength.
-            </p>
-          </Col>
-          <Col
-            style={{
-              padding: "0 8vw 0 1vw",
-              display: "flex",
-              flexDirection: "column",
-              height: "100%",
-              // justifyContent: "center",
-              // backgroundColor: "red",
-              // alignItems: "center",
-            }}
-            xs={12}
-            md={6}
-          >
-            <img
-              className={"hideOnxs"}
-              src={window.location.origin + "/me.jpg"}
             />
-          </Col>
-        </Row>
+            RAJA OSAMA
+          </p>
+          <p
+            style={{
+              paddingLeft: "10px",
+              lineHeight: "1.5",
+              borderLeft: "11px solid",
+            }}
+            className="primaryLT  small fw100"
+          >
+            {" "}
+            A full-Stack Passionate developer who loves coding and loves solving
+            complex problems with over 3.5 years of experience in developing
+            Mobile Apps, Websites and server sided app on various languages like
+            PHP, JavaScript, C#, Java, dart, and swift and have worked with
+            NoSQL type databases like Firebase and MongoDB as well as SQL type
+            Databases like MSSQL, MYSQL.
+            <br />
+            Currently Focused on Multiplatform Development and Cross-platform
+            Development over React Native and with PWA. I always tire to stay
+            up-to-date with the latest technologies available with time and I
+            consider it my strength.
+          </p>
+        </div>
       </div>
     </div>
     <BackgroundT text={["ABOUT", "ME"]} />

@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import React from "react"
 
 export default function Footer(props) {
@@ -16,9 +17,15 @@ export default function Footer(props) {
         <div style={{ display: "flex" }} className="primaryDT smaller">
           {!props.footerRight ? (
             <div class="navbar">
-              <a href="#home">BLOGS</a>
-              <a href="#news">PROJECTS</a>
-              <a href="#contact">RESUME</a>
+              <a>
+                <Link to={"/blogs"}>BLOGS</Link>
+              </a>
+              <a>
+                <Link to={"/projects"}>PROJECTS</Link>
+              </a>
+              <a>
+                <a href={window.location.origin + "/resume"}>RESUME</a>
+              </a>
             </div>
           ) : (
             props.footerRight

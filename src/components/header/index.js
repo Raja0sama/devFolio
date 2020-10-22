@@ -3,7 +3,13 @@ import { Navicon, Close } from "@styled-icons/evil"
 import { Link } from "gatsby"
 import BackgroundT from "../backgroundT"
 import { useStyle } from "../../utils/theme"
+import Pattern from "../pattern"
+import { Animated } from "react-animated-css"
 
+const variants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: "-100%" },
+}
 export default function Header(props) {
   const [drawer, setdrawer] = useState(false)
   const MenuIcon = !drawer ? Navicon : Close
@@ -38,7 +44,15 @@ export default function Header(props) {
         </div>
       </header>
 
-      {drawer && <Menu />}
+      <Animated
+        animationIn="slideInLeft"
+        animationOut="slideOutRight"
+        animationInDuration={1400}
+        animationOutDuration={1400}
+        isVisible={drawer}
+      >
+        {drawer && <Menu />}
+      </Animated>
     </>
   )
 }
@@ -49,43 +63,76 @@ const Menu = props => {
   return (
     <div
       style={{
-        backgroundColor: theme == "light" ? "#dadada" : "#090909",
+        backgroundColor: theme == "light" ? "#fff" : "#090909",
       }}
       className={"menu"}
     >
-      <Link
-        className={"primaryT largest"}
-        style={{ textDecoration: "none" }}
-        to="/home"
-      >
-        HOME
-      </Link>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: 300,
+          height: 300,
+          "border-bottom-right-radius": " 300px",
+          backgroundColor: "#ffdb66",
+        }}
+      />
+      <Pattern />
+      <div style={{ margin: "100px 100px" }}>
+        <h1
+          className={"primaryT"}
+          style={{ fontSize: "16vh", fontWeight: 900, marginBottom: 0 }}
+        >
+          MENU
+        </h1>
+        <div style={{ paddingLeft: 10, borderLeft: "2px solid black" }}>
+          <h2 style={{ fontWeight: 100, margin: 0 }}>
+            {" "}
+            <Link
+              className={"primaryLT "}
+              style={{ textTransform: "capitalize", textDecoration: "none" }}
+              to="/home"
+            >
+              Home
+            </Link>
+          </h2>
+          <h2 style={{ fontWeight: 100, margin: 0 }}>
+            {" "}
+            <Link
+              className={"primaryLT "}
+              style={{ textTransform: "capitalize", textDecoration: "none" }}
+              to="/aboutme"
+            >
+              {" "}
+              About Me
+            </Link>
+          </h2>
+          <h2 style={{ fontWeight: 100, margin: 0 }}>
+            {" "}
+            <Link
+              className={"primaryLT "}
+              style={{ textTransform: "capitalize", textDecoration: "none" }}
+              to="/skills"
+            >
+              {" "}
+              Skill
+            </Link>
+          </h2>
+          <h2 style={{ fontWeight: 100, margin: 0 }}>
+            {" "}
+            <Link
+              className={"primaryLT "}
+              style={{ textTransform: "capitalize", textDecoration: "none" }}
+              to="/contact"
+            >
+              {" "}
+              Contact
+            </Link>
+          </h2>
+        </div>
+      </div>
 
-      <Link
-        className={"primaryT largest"}
-        style={{ textDecoration: "none" }}
-        to="/aboutme"
-      >
-        {" "}
-        ABOUT ME
-      </Link>
-
-      <Link
-        className={"primaryT largest"}
-        style={{ textDecoration: "none" }}
-        to="/skills"
-      >
-        {" "}
-        SKILL
-      </Link>
-      <Link
-        className={"primaryT largest"}
-        style={{ textDecoration: "none" }}
-        to="/contact"
-      >
-        {" "}
-        CONTACT
-      </Link>
       <BackgroundT text={["MENU"]} />
     </div>
   )

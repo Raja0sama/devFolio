@@ -15,6 +15,7 @@ const BackgroundT = props => (
       flexDirection: "column",
       pointerEvents: "none",
       mixBlendMode: "difference",
+
       // zIndex: -1,
     }}
   >

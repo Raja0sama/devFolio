@@ -14,7 +14,8 @@ export default function Resume() {
       <>
         {!isNumber(e[0]) && (
           <p className={"primaryRT small"}>
-            "{e[0].toLowerCase()}" : {Array.isArray(e[1]) ? "[" : "{"}
+            "{e[0].toLowerCase()}" :{" "}
+            {Array.isArray(e[1]) ? "[" : typeof e[1] == "object" ? "{" : null}
           </p>
         )}
         <div style={{ paddingLeft: 30 }}>
@@ -33,7 +34,7 @@ export default function Resume() {
         <p className={"primaryT small"}>
           {!isNumber(e[0]) && (
             <>
-              {Array.isArray(e[1]) ? "]" : "}"}
+              {Array.isArray(e[1]) ? "]" : typeof e[1] == "object" ? "}" : null}
               {Object.entries(arr).length != i + 1 && ","}
             </>
           )}
@@ -43,10 +44,12 @@ export default function Resume() {
   }
   return (
     <>
-      <Particles />
-      <BackgroundT text={["RESUME"]} />
+      {/* <Particles />
+      <BackgroundT text={["RESUME"]} /> */}
       <div
         style={{
+          fontFamily: "Source Code Pro",
+
           display: "flex",
           justifyContent: "center",
           overflow: "auto",

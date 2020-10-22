@@ -1,9 +1,10 @@
 {
-  "colors": {
-    "primaryText": "#FFFFFF",
-    "primarySemiLightText": "#CCCCCC",
-    "primaryDarkText": "#808080",
-    "primary": "#090909"
+  "dark": {
+    "background": "rgb(9, 9, 9)",
+    "color": "rgb(255,255,255)"
   },
-  "text": {}
+  "light": {
+    "color": "rgb(9, 9, 9)",
+    "background": "rgb(255,255,255)"
+  }
 }

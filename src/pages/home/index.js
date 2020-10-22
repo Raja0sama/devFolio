@@ -1,99 +1,72 @@
-import React from "react"
-import Layout from "../../components/Layout"
-import { Row, Col } from "react-simple-flex-grid"
-import "react-simple-flex-grid/lib/main.css"
-import Lottie from "lottie-react-web"
-import animation from "../../animation.json"
-import BackgroundT from "../../components/backgroundT"
-import { Helmet } from "react-helmet"
+import React, { useEffect } from "react"
+import { useGlobal } from "../../utils/context"
 import { useStyle } from "../../utils/theme"
-import Particles from "../../components/particles"
-export default function Home() {
+
+const Home = props => {
+  const [theme, _, THEMEJSON] = useStyle()
+  const [pageData, setPageData] = useGlobal()
+  useEffect(() => {
+    setPageData({ title: "1- HOME" })
+  }, [])
   return (
-    <Layout title={"HOME"}>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>RAJA OSAMA 😎 | HOME</title>
-      </Helmet>
-      <BackgroundT text={["CREATIVE", "DEVELOPER"]} />
-      <section
+    <section
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        justifyContent: "center",
+      }}
+    >
+      <h1 style={{ fontSize: "calc(5vh + 4vw)", fontWeight: "bold" }}>
+        RAJA OSAMA
+        <span aria-label={""} role="img">
+          😎
+        </span>
+      </h1>
+      <p
         style={{
-          display: "flex",
-          justifyContent: "center",
-          height: "100%",
-          flexDirection: "column",
-          paddingLeft: "10%",
-          paddingRight: "10%",
-          marginTop: -15,
+          fontSize: "4vh",
+          marginLeft: "2px",
+          fontWeight: 100,
+          width: "50vw",
+          opacity: "0.63",
         }}
       >
-        <div
+        An Artist who design masterpieces with his front-end &amp; back-end
+        development skills over JavaScript and PHP.
+        <br />
+      </p>
+      <div>
+        <button
+          className="btn outline_btn"
+          type="button"
           style={{
-            position: "absolute",
-            top: 0,
-            right: 0,
-            left: 0,
-            bottom: 0,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        ></div>
-        <div
-          style={{
-            display: "block",
-            // color: "white",
-            zIndex: 0.5,
-            display: "flex",
-            width: "100%",
-            justifyContent: "center",
-            lineHeight: 0.8,
+            width: "160px",
+            marginRight: "9px",
+            color: THEMEJSON[theme].color,
+            background: "rgba(41, 41, 48, 0)",
+            fontSize: "14px",
+            border: `1px solid ${THEMEJSON[theme].color}`,
           }}
         >
-          <div style={{ zIndex: 0.9 }}>
-            <div style={{ display: "flex", flexWrap: "wrap" }}>
-              <span
-                className={"primaryT"}
-                style={{ fontSize: "20vh", fontWeight: 700 }}
-              >
-                I'M
-              </span>
-              <span style={{ fontSize: "16vh", fontWeight: 700 }}>👋</span>
-            </div>
-            <br />
-            <span
-              className={"primaryT"}
-              style={{ fontSize: "10vh", fontWeight: 900 }}
-            >
-              RAJA OSAMA
-            </span>
-            <br />
-            <br />
-            <span
-              className={"primaryT"}
-              style={{ fontSize: "3vh", fontWeight: 100 }}
-            >
-              Full-Stack Developer \ Cross-Platform Developer \ Tech Agnostic
-              Developer
-            </span>
-            <br />
-            <br />
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
-            >
-              <button className="btn success"> Contact Me </button>
-              <span className="primaryDT showOnxs">
-                &nbsp;&nbsp;&nbsp;&nbsp;SEE MY WORK
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <Particles />
-    </Layout>
+          SEE MY&nbsp;WORK
+        </button>
+        <button
+          className="btn outline_btn"
+          type="button"
+          style={{
+            width: "120px",
+            color: THEMEJSON[theme].color,
+            background: "rgba(41, 41, 48, 0)",
+            fontSize: "14px",
+            border: `1px solid ${THEMEJSON[theme].color}`,
+          }}
+        >
+          GITHUB
+        </button>
+      </div>
+    </section>
   )
 }
+
+export default Home

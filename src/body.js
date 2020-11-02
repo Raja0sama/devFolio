@@ -9,19 +9,20 @@ import themeJSON from "./theme.json"
 import { useGlobal } from "./utils/context"
 
 export default function Body({ children }) {
-  const [theme, setTheme] = useStyle()
+  const [theme, setTheme, THEMEJSON] = useStyle()
   const [pageData, setPageData] = useGlobal()
   useEffect(() => {
     document.body.setAttribute(
       "style",
-      `height: 100%;background: ${themeJSON[theme].background};color: ${themeJSON[theme].color};font-family: 'IBM Plex Mono', monospace;`
+      `height: 100%;background: ${themeJSON[theme].background};color: ${themeJSON[theme].color};font-family: 'Maven Pro', sans-serif;`
     )
   }, [theme])
+
   return (
     <div className="d-flex flex-fill" style={{ height: "100vh" }}>
       <div
         className="d-flex flex-column"
-        style={{ height: "100%", width: "60px", background: "rgb(17,17,17)" }}
+        style={{ height: "100%", width: "60px", background: "rgb(2 2 2 / 1)" }}
       >
         <div
           className="justify-content-center align-items-center"
@@ -61,7 +62,7 @@ export default function Body({ children }) {
           <Link
             className="d-flex justify-content-center align-items-center menuicon"
             style={{ width: "100%", height: "60px" }}
-            to="/"
+            to="/skills"
           >
             <i
               className="icon ion-ios-lightbulb-outline"
@@ -98,7 +99,8 @@ export default function Body({ children }) {
           width: "100%",
           height: "100vh",
           background: "rgba(255,255,255,0)",
-          padding: "50px",
+          padding: "5vw 6vw",
+          overflow : 'hidden'
         }}
       >
         <div
@@ -113,7 +115,7 @@ export default function Body({ children }) {
             paddingRight: "5vw",
           }}
         >
-          <h5 style={{ width: "94px" }}>{pageData.title}</h5>
+          {/* <h5 style={{ width: "94px" }}>{pageData.title}</h5> */}
           <div
             className="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-end justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end"
             style={{ width: "100%" }}
@@ -128,7 +130,7 @@ export default function Body({ children }) {
                 marginRight: "10px",
               }}
             >
-              RESUME
+              <a href={"/resume"}>Resume</a>
             </button>
             <button
               className="btn"

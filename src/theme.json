@@ -1,6 +1,6 @@
 {
   "dark": {
-    "background": "rgb(9, 9, 9)",
+    "background": "black",
     "color": "rgb(255,255,255)"
   },
   "light": {

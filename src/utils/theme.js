@@ -33,7 +33,7 @@ export const THEMEContextProvider = ({ children }) => {
 }
 export function useStyle() {
   const { theme, setTHEME } = useContext(THEMEContext)
-  //   console.log(useContext(THEMEContext))
+  //   .log(useContext(THEMEContext))
   return [theme, setTHEME, THEMEJSON]
 }
 

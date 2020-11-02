@@ -23,4 +23,5 @@ module.exports = {
 
     "gatsby-plugin-offline",
   ],
+  siteMetadata: {},
 }

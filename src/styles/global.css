@@ -761,3 +761,53 @@ a:hover {
     clip: rect(52px, 9999px, 28px, 0);
   }
 }
+@media only screen and (min-width: 500px) {
+  .mainP {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .mainP {
+    font-size: calc(1.7vh + 1.7vw);
+  }
+}
+
+@keyframes move {
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+a {
+  color: #fff !important;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #0c081c;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  background-color: #0c081c;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #160f33;
+}
+
+.hideScroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.hideScroll::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.hideScroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+}

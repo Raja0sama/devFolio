@@ -1,97 +1,114 @@
+import React from "react"
+import useWindowSize from "../../utils/windowSize"
+import BoxBg from "../../assets/svg/box.svg"
+import Box from "../../assets/svg/boxbg.svg"
 import { Link } from "gatsby"
-import React, { useEffect } from "react"
+import { Button, ButtonOutline } from "../../components/Buttons"
 import { Helmet } from "react-helmet"
-import Lottie from "react-lottie"
-import HackingGlitchText from "../../components/hackingGlitchText"
-import { useGlobal } from "../../utils/context"
-import { useStyle } from "../../utils/theme"
-import github from "./../../assets/icons/github.png"
-
-const Home = props => {
-  const [theme, _, THEMEJSON] = useStyle()
-  const [pageData, setPageData] = useGlobal()
-  useEffect(() => {
-    setPageData({ title: "HOME" })
-  }, [])
+import Layout from "./Layout"
+const Home = () => {
+  const { height, width } = useWindowSize()
+  const isMobile = width < 765
   return (
-    <section
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100%",
-        justifyContent: "center",
-        overflow: "hidden",
-      }}
-    >
+    <Layout>
       <Helmet>
         <title>Raja Osama | Home Page</title>
       </Helmet>
-      <div className="glitch-wrapper">
-        <h1
-          className={"glitch"}
-          data-text="Raja Osama"
-          style={{
-            fontSize: "calc(4vh + 3vw)",
-            overflow: "hidden",
-            fontWeight: "bold",
-          }}
-        >
-          <HackingGlitchText attributes={{ id: "GH" }}>
-            Raja Osama
-          </HackingGlitchText>
-        </h1>
-      </div>
-      <p
-        className={"glitchH"}
-        data-text="An Artist who design masterpieces with his front-end &amp; back-end
-        development skills over JavaScript and PHP."
+      <HoveringRightBottom BoxBg={BoxBg} width={width} Box={Box} />
+      <div
         style={{
-          fontSize: "calc(1.3vh + 1.5vw)",
-          marginLeft: "2px",
-          fontWeight: 100,
-          width: "50vw",
-          opacity: "0.63",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          height: "100%",
         }}
       >
-        An Artist who design masterpieces with his front-end &amp; back-end
-        development skills over JavaScript and PHP.
-        <br />
-      </p>
-      <div>
-        <button
-          className="btn outline_btn"
-          type="button"
+        <h1
           style={{
-            width: "160px",
-            marginRight: "9px",
-            color: THEMEJSON[theme].color,
-            background: "rgba(41, 41, 48, 0)",
-            fontSize: "14px",
-            border: `1px solid ${THEMEJSON[theme].color}`,
+            fontSize: width < 500 ? 46 : width / 15,
+            fontWeight: "bolder",
+            letterSpacing: "0px",
           }}
         >
-          <Link to={"/work"}>🛠 SEE MY&nbsp;WORK</Link>
-        </button>
-        <button
-          className="btn outline_btn"
-          type="button"
+          Raja Osama
+        </h1>
+        <h1
           style={{
-            width: "120px",
-            color: THEMEJSON[theme].color,
-            background: "rgba(41, 41, 48, 0)",
-            fontSize: "14px",
-            border: `1px solid ${THEMEJSON[theme].color}`,
+            fontSize: 26,
+            // fontWeight: "bolder",
+            letterSpacing: "0px",
           }}
         >
-          <a href={"https://github.com/Raja0sama"}>
-            {" "}
-            <img src={github} style={{ width: 20 }} />
-            GITHUB
-          </a>
-        </button>
+          라자 오사마 - راجہ اسامہ
+        </h1>
+        <p
+          style={{
+            maxWidth: isMobile ? undefined : width / 2,
+            fontSize: width < 600 ? 17 : 22,
+            letterSpacing: "0px",
+            color: "#8F8F8F",
+            fontWeight: 300,
+          }}
+        >
+          A Rockstar Product Designer & Tech Agnostic Software Developer, based
+          in Karachi city of lights.
+        </p>
+        <div
+          style={{ display: isMobile ? "block" : "flex", textAlign: "center" }}
+        >
+          <Button>
+            <div style={{ margin: "0 30px" }}>
+              <Link to={"/projects"}>Work</Link>
+            </div>
+          </Button>
+          <ButtonOutline>
+            <div style={{ margin: "0 10px" }}>
+              {" "}
+              <Link to={"https://www.linkedin.com/in/rajaosama/"}>Resume</Link>
+            </div>
+          </ButtonOutline>
+        </div>
       </div>
-    </section>
+    </Layout>
   )
 }
 
 export default Home
+
+function HoveringRightBottom({ BoxBg, width = 0, Box }) {
+  return (
+    <>
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+        }}
+      >
+        {/* <img src={Box} style={{ width: width / 2 }} /> */}
+        <img
+          src={BoxBg}
+          style={{
+            width: width / 2,
+          }}
+        />
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: width / 12,
+          right: width / 15,
+        }}
+      >
+        <img
+          src={Box}
+          style={{
+            width: width / 5,
+            animation: "move 6s ease infinite",
+          }}
+        />
+        {/* <img src={BoxBg} style={{ width: width / 2 }} /> */}
+      </div>
+    </>
+  )
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import useWindowSize from "../../utils/windowSize"
 import MenuIcon from "../../assets/img/menuIcon.png"
-import cancel from "../../assets/img/Cancel.png"
+import cancel from "../../assets/img/cancel.png"
 const routes = [
   {
     name: "Home",

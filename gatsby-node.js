@@ -5,7 +5,7 @@ const { default: fetch } = require("node-fetch")
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  fetch("https://api.dksami.vercel.app/projects.json")
+  fetch("https://portfolio-api.dksami.vercel.app/get-projects")
     .then(e => e.json())
     .then(data => {
       data.map((e, i) => {

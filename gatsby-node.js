@@ -2,29 +2,26 @@ const path = require(`path`)
 var fs = require("fs")
 const { default: fetch } = require("node-fetch")
 /** @type { import("gatsby").GatsbyNode["createPages"] } */
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  fetch("https://portfolio-api.dksami.vercel.app/get-projects")
-    .then(e => e.json())
-    .then(data => {
-      data.map((e, i) => {
-        createPage({
-          path: `/projects/project-${i + 1}/`,
-          component: path.resolve(`./src/dynamicPages/project/index.js`),
-          context: {
-            data: e,
-          },
-        })
-      })
-
-      createPage({
-        path: `/projects`,
-        component: path.resolve(`./src/dynamicPages/work/index.js`),
-        context: {
-          data: data,
-        },
-      })
+  const a = await fetch("https://portfolio-api.dksami.vercel.app/get-projects")
+  const data = await a.json()
+  data.map((e, i) => {
+    createPage({
+      path: `/projects/project-${i + 1}/`,
+      component: path.resolve(`./src/dynamicPages/project/index.js`),
+      context: {
+        data: e,
+      },
     })
-    .catch(e => console.log(e))
+  })
+
+  createPage({
+    path: `/projects`,
+    component: path.resolve(`./src/dynamicPages/work/index.js`),
+    context: {
+      data: data,
+    },
+  })
 }

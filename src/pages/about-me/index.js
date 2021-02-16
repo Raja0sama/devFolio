@@ -30,7 +30,7 @@ import next from "./../../assets/icons/next.png"
 import twitter from "./../../assets/icons/twitter.png"
 import linkedin from "./../../assets/icons/linkedin.png"
 import github from "./../../assets/icons/github.png"
-import Layout  from "../home/Layout"
+import Layout from "../home/Layout"
 import { Helmet } from "react-helmet"
 
 const About = () => {
@@ -140,27 +140,32 @@ function Content({
         <br />
         <div className="row">
           <div className="col-md-9">
-            I'm a creative product designer that creates products with a keen
-            interest in programming and video games.
+            I'm a Creative product designer, and I assist companies with their
+            products such as mobile applications and web applications.
+            <br />
+            <br />I always loved programming; I started when I was 12 years old
+            with HTML and CSS, and then I enrolled in a web development program
+            where I earned a diploma. I am the kind of person who will stand out
+            in a group of people because of my working skills and dedication.
+            <br />
+            <br />I like to call my self a tech agnostic developer, I have
+            worked with uncountable frameworks and technologies. I always love
+            to learn new technologies, because I have this fear of being left
+            behind.
             <br />
             <br />
-            Since I was 12 years old, I love programming, working with different
-            technologies and programming languages like c#, java PHP, and
-            javascript, developing some cool open-source projects, and writing
-            technical blogs on Medium.
+            I started programming because of gamming; when I was 12, I got
+            curious about all these website sharing games over the internet,
+            which sparked my interest in web development eventually. I started
+            taking an online course for web development, where I learn PHP and
+            HTML, CSS, javascript. After some years of blogging over bloggers, I
+            enrolled in a Software Engineering Program after completing my High
+            School Degree.
             <br />
-            <br />
-            I can adapt any new tools and technologies when needed. I just like
-            exploring the latest and the greatest technologies as they launch,
-            and that way, it keeps me excited and motivated.
-            <br />
-            <br />
-            Started programming because of gamming; when I was 12, I got curious
-            about all these website sharing games over the internet, and that
-            keen my interest in web development eventually. I started taking an
-            online course for web development, where I learn PHP and HTML, CSS,
-            javascript. After some years of blogging over bloggers, I enrolled
-            in a software engineering program after completing high school.
+            <br />I am a Drop-out that needs to put out there, I left my degree
+            in Bachelors in Computer Science because it was not for me every
+            thing they were teaching was either out of context or every out
+            dated.
           </div>
         </div>
         I'm usually focused on:
